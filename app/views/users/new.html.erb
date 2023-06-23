@@ -1,1 +1,15 @@
 <h1>Create a new user</h1>
+
+<form action="<%= users_path %>" method="post" accept-charset="UTF-8">
+<%= csrf_meta_tags %>
+  <label for="username">Username:<label>
+  <input type="text" id="user_username" name="user[username]">
+
+  <label for="password">Password:</label>
+  <input type="password" id="user_password" name="user[password]">
+
+  <label for="email">Email:</label>
+  <input type="text" id="user_email" name="user[email]">
+
+  <input type="submit" value="Create User">
+</form>
