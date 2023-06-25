@@ -15,7 +15,7 @@
   <input type="submit" value="Create User">
 </form> -->
 
-<%= form_tag users_path, method: "post" do%>
+<!-- <%= form_tag users_path, method: "post" do%>
   <%= label_tag(:username, "Username:")%>
   <%= text_field_tag(:username)%>
 
@@ -26,7 +26,21 @@
   <%= text_field_tag(:email)%>
 
   <%= submit_tag("Create User")%>
+<%end%> -->
+
+<%= form_with model: @user do |form|%>
+  <%= form.label :username, 'Your user name here'%>
+  <%= form.text_field :username%>
+
+  <%= form.label :password%>
+  <%= form.password_field :password%>
+
+  <%= form.label :email%>
+  <%= form.email_field :email, placeholder: "example@example.com"%>
+
+  <%= form.submit "Create User"%>
 <%end%>
+
 
 
 
