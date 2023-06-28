@@ -1,14 +1,14 @@
 <h1>Edit User</h1>
 
-<%= form_with(model: @user, url: user_path(@user), method: :patch)%>
-  <%= label_tag(:username, "Username:")%>
-  <%= text_field_tag(:username)%>
+<%= form_with(model: @user, url: user_path(@user), method: :patch) do |form| %>
+  <%= form.label(:username, "Username:") %>
+  <%= form.text_field(:username) %>
 
-  <%= label_tag(:password, "Password:")%>
-  <%= password_field_tag(:password)%>
+  <%= form.label(:password, "Password:") %>
+  <%= form.password_field(:password) %>
 
-  <%= label_tag(:email, "Email:")%>
-  <%= text_field_tag(:email)%>
+  <%= form.label(:email, "Email:") %>
+  <%= form.text_field(:email) %>
 
-  <%= submit_tag("Update User")%>
-<%end%>
+  <%= form.submit("Update User") %>
+<% end %>
